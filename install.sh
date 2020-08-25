@@ -13,7 +13,7 @@ make install
 
 echo "install ok"
 
-local_ip=`ifconfig | grep inet | grep -v "127.0.0.1" | awk '{print $2}'`
+local_ip=`ifconfig | grep inet | grep -v "127.0.0.1" | grep -v inet6 | awk '{print $2}'`
 
 sockd_conf="
 logoutput: /var/log/sockd.log          
